@@ -13,252 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-    * {
-    box-sizing: border-box;
-    }
-
-    html, body {
-    height: 100%;
-    }
-
-    body {
-    background: black;
-    min-height: 100%;
-    font-family: "Arial", sans-serif;
-    }
-
-    .wrap {
-    position: relative;
-    height: 100%;
-    min-height: 500px;
-    padding-bottom: 20px;
-    }
-
-    .game {
-    transform-style: preserve-3d;
-    perspective: 500px;
-    min-height: 100%;
-    height: 100%;
-    }
-
-    @-webkit-keyframes matchAnim {
-    0% {
-        background: #bcffcc;
-    }
-    100% {
-        background: white;
-    }
-    }
-
-    @keyframes matchAnim {
-    0% {
-        background: #bcffcc;
-    }
-    100% {
-        background: white;
-    }
-    }
-    .card {
-    float: left;
-    width: 16.66666%;
-    height: 25%;
-    padding: 5px;
-    text-align: center;
-    display: block;
-    perspective: 500px;
-    position: relative;
-    cursor: pointer;
-    z-index: 50;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-    @media (max-width: 800px) {
-    .card {
-        width: 25%;
-        height: 16.666%;
-    }
-    }
-    .card .inside {
-    width: 100%;
-    height: 100%;
-    display: block;
-    transform-style: preserve-3d;
-    transition: 0.4s ease-in-out;
-    background: white;
-    }
-    .card .inside.picked, .card .inside.matched {
-    transform: rotateY(180deg);
-    }
-    .card .inside.matched {
-    -webkit-animation: 1s matchAnim ease-in-out;
-            animation: 1s matchAnim ease-in-out;
-    -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s;
-    }
-    .card .front, .card .back {
-    border: 1px solid black;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    }
-    .card .front img, .card .back img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    }
-    .card .front {
-    transform: rotateY(-180deg);
-    }
-    @media (max-width: 800px) {
-    .card .front {
-        padding: 5px;
-    }
-    }
-    .card .back {
-    transform: rotateX(0);
-    }
-    @media (max-width: 800px) {
-    .card .back {
-        padding: 10px;
-    }
-    }
-
-    .modal-overlay {
-    display: none;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    }
-
-    .modal {
-    display: none;
-    position: relative;
-    width: 500px;
-    height: 400px;
-    max-height: 90%;
-    max-width: 90%;
-    min-height: 380px;
-    margin: 0 auto;
-    background: white;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 30px 10px;
-    }
-    .modal .winner {
-    font-size: 80px;
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    color: #4d4d4d;
-    text-shadow: 0px 3px 0 black;
-    }
-    @media (max-width: 480px) {
-    .modal .winner {
-        font-size: 60px;
-    }
-    }
-    .modal .restart {
-    font-family: "Anton", sans-serif;
-    margin: 30px auto;
-    padding: 20px 30px;
-    display: block;
-    font-size: 30px;
-    border: none;
-    background: #4d4d4d;
-    background: linear-gradient(#4d4d4d, #222);
-    border: 1px solid #222;
-    border-radius: 5px;
-    color: white;
-    text-shadow: 0px 1px 0 black;
-    cursor: pointer;
-    }
-    .modal .restart:hover {
-    background: linear-gradient(#222, black);
-    }
-    .modal .message {
-    text-align: center;
-    }
-    .modal .message a {
-    text-decoration: none;
-    color: #28afe6;
-    font-weight: bold;
-    }
-    .modal .message a:hover {
-    color: #56c0eb;
-    border-bottom: 1px dotted #56c0eb;
-    }
-    .modal .share-text {
-    text-align: center;
-    margin: 10px auto;
-    }
-    .modal .social {
-    margin: 20px auto;
-    text-align: center;
-    }
-    .modal .social li {
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    margin-right: 10px;
-    }
-    .modal .social li:last-child {
-    margin-right: 0;
-    }
-    .modal .social li a {
-    display: block;
-    line-height: 50px;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    }
-    .modal .social li a.facebook {
-    background: #3b5998;
-    }
-    .modal .social li a.facebook:hover {
-    background: #4c70ba;
-    }
-    .modal .social li a.google {
-    background: #D34836;
-    }
-    .modal .social li a.google:hover {
-    background: #dc6e60;
-    }
-    .modal .social li a.twitter {
-    background: #4099FF;
-    }
-    .modal .social li a.twitter:hover {
-    background: #73b4ff;
-    }
-
-    footer {
-    height: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 0;
-    }
-    footer .disclaimer {
-    line-height: 20px;
-    font-size: 12px;
-    color: #727272;
-    text-align: center;
-    }
-    @media (max-width: 767px) {
-    footer .disclaimer {
-        font-size: 8px;
-    }
-    }
-    </style>
 
     <script>
         window.console = window.console || function(t) {};
@@ -273,6 +29,14 @@
 </head>
 
 <body translate="no" >
+    <audio id="1a" src="1.mp3"></audio>
+    <audio id="2a" src="2.mp3"></audio>
+    <audio id="3a" src="3.mp3"></audio>
+    <audio id="4a" src="4.mp3"></audio>
+    <audio id="5a" src="5.mp3"></audio>
+    <audio id="6a" src="6.mp3"></audio>
+    <audio id="7a" src="7.mp3"></audio>
+    <audio id="8a" src="8.mp3"></audio>
     <div class="wrap">
         <div class="game"></div>
             <div class="modal-overlay">
@@ -295,6 +59,8 @@
         // License -- MIT
         // best in full screen, works on phones/tablets (min height for game is 500px..) enjoy ;)
         // Follow me on Codepen
+
+
 
         (function () {
 
@@ -398,7 +164,7 @@
             buildHTML: function () {
             var frag = '';
             this.$cards.each(function (k, v) {
-                frag += '<div class="card" data-id="' + v.id + '"><div class="inside">\
+                frag += '<div class="card" id="' + v.id + '" data-id="' + v.id + '"><div class="inside">\
                         <div class="front"><img src="' + v.img + '"\
                         alt="' + v.name + '" /></div>\
                         <div class="back"><img src="silicon.svg"\
@@ -411,45 +177,52 @@
 
         var cards = [
         {
-            name: "php",
+            name: "one",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/php-logo_1.png",
-            id: 1 },
+            id: 1, 
+            sonido: "1.mp3" },
 
         {
-            name: "css3",
+            name: "two",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/css3-logo.png",
-            id: 2 },
+            id: 2, 
+            sonido: "2.mp3" },
 
         {
-            name: "html5",
+            name: "three",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/html5-logo.png",
-            id: 3 },
+            id: 3, 
+            sonido: "3.mp3" },
 
         {
-            name: "jquery",
+            name: "four",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/jquery-logo.png",
-            id: 4 },
+            id: 4, 
+            sonido: "4.mp3" },
 
         {
-            name: "javascript",
+            name: "five",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/js-logo.png",
-            id: 5 },
+            id: 5, 
+            sonido: "5.mp3" },
 
         {
-            name: "node",
+            name: "six",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/nodejs-logo.png",
-            id: 6 },
+            id: 6, 
+            sonido: "6.mp3" },
 
         {
-            name: "photoshop",
+            name: "seven",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/photoshop-logo.png",
-            id: 7 },
+            id: 7, 
+            sonido: "7.mp3" },
 
         {
-            name: "python",
+            name: "eight",
             img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
-            id: 8 },
-
+            id: 8, 
+            sonido: "8.mp3" },
         ];
 
 
@@ -458,9 +231,51 @@
 
 
         })();
-        </script>
 
-  
+        </script>
+        <script>
+
+            document.getElementById('1').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('1a').play();
+              });
+
+            document.getElementById('2').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('2a').play();
+              });
+
+            document.getElementById('3').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('3a').play();
+              });
+
+            document.getElementById('4').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('4a').play();
+              });
+
+            document.getElementById('5').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('5a').play();
+              });
+
+            document.getElementById('6').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('6a').play();
+              });
+
+            document.getElementById('7').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('7a').play();
+              });
+
+            document.getElementById('8').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('8a').play();
+              });
+
+        </script>
 
 </body>
 
