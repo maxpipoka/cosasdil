@@ -1,0 +1,178 @@
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+    <style>
+      /*Hoja de estilos*/
+      #entorno {
+          display: block;
+          margin: 0 auto;
+      }
+      
+      #fondo {
+          opacity: 0.3;
+      }
+    </style>
+  
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+  </head>
+  
+  <body translate="no">
+    <audio class="audio-for-speech" src=""></audio>
+    <div class="translate-tooltip-mtz hidden">
+      <div class="header">
+          <div class="header-controls">
+              <span class="sound-translate"></span>
+              <span class="settings"></span>
+          </div>
+          <div class="translate-icons">
+              <img class="from" src="">
+              <img class="arrow" src="chrome-extension://hiidjliailpkjeigakikbfedlfijngih/images/right-arrow.png">
+              <img class="to" src="">
+          </div>
+      </div>
+      <div class="translated-text">
+        <div class="words"></div>
+        <div class="sentences"></div>
+      </div>
+      <div class="controls">
+          <div class="controls__control-wrapper">
+              <span class="controls__description">
+                  Fast traslate
+              </span>
+              <span class="controls__toggle dbl-click active" data-store="double_click">
+                  <div class="controls__inner-circle"></div>
+              </span>
+          </div>
+          <div class="controls__control-wrapper">
+              <span class="controls__description">Icon translate</span>
+              <span class="controls__toggle icon-trans active" data-store="icon_trans">
+                  <div class="controls__inner-circle"></div>
+              </span>
+          </div>
+      </div>
+    </div>
+                  <span class="translate-button-mtz hidden"></span>
+    <svg width="600" height="600" id="entorno">
+          <g id="fondo"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master//pikachu.png" width="400" height="400" x="200" y="100"></image></g>
+      <g class="padre" id="0"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/1.png" class="movil" width="134" height="163" x="2" y="261" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="1"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/2.png" class="movil" width="192" height="134" x="1" y="138" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="2"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/3.png" class="movil" width="134" height="163" x="6" y="79" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="3"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/4.png" class="movil" width="163" height="134" x="1" y="42" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="4"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/5.png" class="movil" width="134" height="192" x="3" y="162" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="5"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/6.png" class="movil" width="163" height="134" x="9" y="265" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="6"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/7.png" class="movil" width="134" height="163" x="8" y="217" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="7"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/8.png" class="movil" width="192" height="134" x="4" y="64" onmousedown="seleccionarElemento(evt)"></image></g>
+      <g class="padre" id="8"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/9.png" class="movil" width="134" height="163" x="9" y="36" onmousedown="seleccionarElemento(evt)"></image></g>
+  </svg>
+  <audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  
+    
+        <script id="rendered-js">
+  /*Programacion de JavaScript*/
+  
+  var piezas = document.getElementsByClassName('movil');
+  
+  var tamWidh = [134, 192, 134, 163, 134, 163, 134, 192, 134];
+  var tamHeight = [163, 134, 163, 134, 192, 134, 163, 134, 163];
+  
+  for (var i = 0; i < piezas.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+    piezas[i].setAttribute("width", tamWidh[i]);
+    piezas[i].setAttribute("height", tamHeight[i]);
+    piezas[i].setAttribute("x", Math.floor(Math.random() * 10 + 1));
+    piezas[i].setAttribute("y", Math.floor(Math.random() * 409 + 1));
+    piezas[i].setAttribute("onmousedown", "seleccionarElemento(evt)");
+  }window.CP.exitedLoop(0);
+  
+  var elementSelect = 0;
+  var currentX = 0;
+  var currentY = 0;
+  var currentPosX = 0;
+  var currentPosY = 0;
+  
+  function seleccionarElemento(evt) {
+    elementSelect = reordenar(evt);
+    currentX = evt.clientX;
+    currentY = evt.clientY;
+    currentPosx = parseFloat(elementSelect.getAttribute("x"));
+    currentPosy = parseFloat(elementSelect.getAttribute("y"));
+    elementSelect.setAttribute("onmousemove", "moverElemento(evt)");
+  }
+  
+  function moverElemento(evt) {
+    var dx = evt.clientX - currentX;
+    var dy = evt.clientY - currentY;
+    currentPosx = currentPosx + dx;
+    currentPosy = currentPosy + dy;
+    elementSelect.setAttribute("x", currentPosx);
+    elementSelect.setAttribute("y", currentPosy);
+    currentX = evt.clientX;
+    currentY = evt.clientY;
+    elementSelect.setAttribute("onmouseout", "deseleccionarElemento(evt)");
+    elementSelect.setAttribute("onmouseup", "deseleccionarElemento(evt)");
+    iman();
+  }
+  
+  function deseleccionarElemento(evt) {
+    testing();
+    if (elementSelect != 0) {
+      elementSelect.removeAttribute("onmousemove");
+      elementSelect.removeAttribute("onmouseout");
+      elementSelect.removeAttribute("onmouseup");
+      elementSelect = 0;
+    }
+  }
+  
+  var entorno = document.getElementById('entorno');
+  
+  function reordenar(evt) {
+    var padre = evt.target.parentNode;
+    var clone = padre.cloneNode(true);
+    var id = padre.getAttribute("id");
+    entorno.removeChild(document.getElementById(id));
+    entorno.appendChild(clone);
+    return entorno.lastChild.firstChild;
+  }
+  
+  var origX = [200, 304, 466, 200, 333, 437, 200, 304, 466];
+  var origY = [100, 100, 100, 233, 204, 233, 337, 366, 337];
+  
+  function iman() {
+    for (var i = 0; i < piezas.length; i++) {if (window.CP.shouldStopExecution(1)) break;
+      if (Math.abs(currentPosx - origX[i]) < 15 && Math.abs(currentPosy - origY[i]) < 15) {
+        elementSelect.setAttribute("x", origX[i]);
+        elementSelect.setAttribute("y", origY[i]);
+      }
+    }window.CP.exitedLoop(1);
+  }
+  
+  var win = document.getElementById("win");
+  
+  function testing() {
+    var bien_ubicada = 0;
+    var padres = document.getElementsByClassName('padre');
+    for (var i = 0; i < piezas.length; i++) {if (window.CP.shouldStopExecution(2)) break;
+      var posx = parseFloat(padres[i].firstChild.getAttribute("x"));
+      var posy = parseFloat(padres[i].firstChild.getAttribute("y"));
+      ide = padres[i].getAttribute("id");
+      if (origX[ide] == posx && origY[ide] == posy) {
+        bien_ubicada = bien_ubicada + 1;
+      }
+    }window.CP.exitedLoop(2);
+    if (bien_ubicada == 9) {
+      win.play();
+    }
+  }
+  //# sourceURL=pen.js
+      </script>
+  </body>
+</html>
