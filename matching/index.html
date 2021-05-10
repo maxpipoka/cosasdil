@@ -131,12 +131,7 @@
 					</div>
 				</div>
 				<div id="footerPreAct">
-										<div class="activityLogin">
-						<span class="activityLogin__user"><img src="https://www.educaplay.com/v2/resources/img/user.svg" alt="user icon"></span>
-						<div class="activityLogin__txt">
-																								<a class="activityLogin__notIdentified" href="https://www.educaplay.com/login/?min=true&anonymous=true&redirect=juego&extra=9091874-activity_4.html" title=""></a>
-																					</div>
-					</div>
+										
 										<div class="btnComenzar" id="btnComenzarInicio">
 						<a href="#" class="btn btn-large btn-primary" id="btnComenzar"></a>
 					</div>
@@ -147,8 +142,7 @@
 							</div>
 							<div class="optionsAct ri">
 																	<a href="//www.educaplay.com/game/9091874-activity_4.html" id="enlacePantallaCompletaP" class="full" target="_blank"></a>
-																		<a href="//www.educaplay.com/printablegame/9091874-activity_4.html" id="enlaceImprimirP" class="print" target="_blank"></a>
-																									<a href="#" id="btnAyuda" class="ayuda"></a>
+																		
 							</div>
 						</div>
 					</div>
@@ -225,9 +219,7 @@
 			<div class="groupInfoPlayer">
             <div id="player">
         <div class="imgUserPlayer"><img src="https://www.educaplay.com/v2/resources/img/usuario.svg" width="74" height="76" alt=""></div>
-        <div class="playerNoRegistrado">
-            <a href="//www.educaplay.com/login/" id="finalAcceder" class="btn btn-primary" target="_top"></a><a href="//www.educaplay.com/signup/" id="finalRegistrarse" target="_top"></a>
-        </div>
+        
     </div>
             <div id="resultados" class="col3">
         <ul>
@@ -244,41 +236,7 @@
         </ul>
         <div class="clear"></div>
     </div>
-        <div id="shareResultado">
-        <div class="txtCompartir">
-            <p id="finalCompartir"></p>
-        </div>
-<script>
-    window.addEventListener('DOMContentLoaded', function() {
-        socializarPage='/socializar';
-        $("#resultShareFb").bind("click",function(e){
-            e.preventDefault();
-            urlShare = 'https://www.facebook.com/sharer/sharer.php?u=https:%2F%2Fwww.educaplay.com%2Fgame%2F9091874-activity_4.html';
-            window.open(urlShare);
-        });
-        $("#resultShareTw").bind("click",function(e){
-            e.preventDefault();
-            msg=txtSocial;
-            msg=msg.replace('[puntuacion]',_getValor("SCORE"));
-            time=_getValor("TIME");
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            if (minutes < 10) {minutes = "0"+minutes;}
-            if (seconds < 10) {seconds = "0"+seconds;}
-            msg=msg.replace('[tiempo]',(minutes+':'+seconds));
-            msg=msg.replace('[nomactividad]','Activity 2 - Matching');
-            urlShare = 'https://twitter.com/intent/tweet?hashtags=Educaplay&text=' + msg + '&url=https:%2F%2Fwww.educaplay.com%2Fgame%2F9091874-activity_4.html';
-            window.open(urlShare);
-        });
-    });
-</script>
-
-    <ul>
-        <li><a id="resultShareTw" href="#" class="shareTw">Twitter</a></li>
-        <li><a id="resultShareFb" href="#" class="shareFb">Facebook</a></li>
-    </ul>
-        <div class="clear"></div>
-    </div>
+        
     </div>			<div class="groupInfoRespuestas">
 				
 			</div>
