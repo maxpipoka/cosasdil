@@ -1,0 +1,22 @@
+ /*Hoja de estilos*/
+ #entorno {
+    display: block;
+    width: 100%;
+    height: 600px;
+
+}
+
+#fondo {
+    opacity: 0.3;
+}
+
+.fondoJuego{
+    width: 400px;
+    height: 400px;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
