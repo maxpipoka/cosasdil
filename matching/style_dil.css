@@ -2,7 +2,7 @@
     display: flex;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 340px) {
     #preActividad {
         display: flex;
         justify-content: center;
