@@ -3,7 +3,31 @@
 }
 
 @media (max-width: 360px) {
+    #preActividad {
+        display: flex;
+        justify-content: center;
+    }
     .iconActividad {
         display: none;
+    }
+    .contentDescripcion {
+        padding: 0;
+    }
+    #descripcionInicio {
+        padding: 0;
+    }
+    .infoPrimary {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .datoInfo {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #footerPreAct {
+        padding-top: 5px;
     }
 }
