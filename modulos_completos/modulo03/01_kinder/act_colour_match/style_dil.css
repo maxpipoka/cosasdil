@@ -50,3 +50,10 @@
     #resultados .rDatos {
         font-size: 20px;
     }
+
+    .btn-image img {
+        max-width: 40px;
+        height: auto;
+        vertical-align: middle;
+    }
+}
