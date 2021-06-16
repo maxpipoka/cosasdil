@@ -13,6 +13,7 @@
 body {
     font-family: 'Exo', sans-serif;
     background-color: var(--main-bg-color);
+    cursor: auto;
 }
 
 /* .h1,
