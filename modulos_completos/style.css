@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+:root {
+    --main-bg-color: #1f8de7f1;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -6,6 +10,7 @@
 
 body {
     font-family: 'Exo', sans-serif;
+    background-color: var(--main-bg-color);
 }
 
 .context {
