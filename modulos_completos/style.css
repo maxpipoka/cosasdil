@@ -17,6 +17,21 @@ body {
     cursor: auto;
 }
 
+p {
+    margin: 0 0 10px;
+    color: linen;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.p-ingles {
+    margin: 0 0 10px;
+    padding: 2px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
 
 /* .h1,
 .h2,
