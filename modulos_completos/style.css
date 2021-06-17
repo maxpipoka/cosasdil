@@ -49,6 +49,11 @@ p {
     text-align: center;
 }
 
+.p_bold {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .context {
     width: 100%;
     position: absolute;
