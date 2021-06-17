@@ -46,6 +46,9 @@ body {
     font-size: auto;
 }
 
+
+/*Area de trabajo separada del fondo animado*/
+
 .area {
     background: #1f8de7f1;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
@@ -54,7 +57,7 @@ body {
 }
 
 
-/* Contenedor responsive con ratio 16:9*/
+/* Contenedor responsive con ratio 16:9 adaptable*/
 
 .embed-container {
     position: relative;
@@ -62,11 +65,12 @@ body {
     padding-bottom: 56.25%;
     height: 0;
     z-index: 20;
+    /*Para mantener separado frente y fondo de la animación*/
     overflow: hidden;
 }
 
 
-/*Contenedor para pegar contenido embedido*/
+/*Contenedor para pegar contenido embedido que se adapte al embebed-conteiner*/
 
 .embed-container iframe {
     position: absolute;
