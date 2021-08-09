@@ -154,19 +154,12 @@ p {
         overflow: hidden;
     }
     .tituloAct {
-        font-size: 0.6em;
+        font-size: 0.5em;
         width: 100%;
         /* height: 25%; */
         text-align: center;
         position: relative;
         padding-top: 40px;
-    }
-
-    .tituloAct .pixels15 h1{
-        font-size: 13px;
-        font-style: italic;
-        max-width: 100%;
-        text-align: center;
     }
 }
 
@@ -185,9 +178,8 @@ p {
         position: relative;
         padding-top: 40px;
     }
-
-    .tituloAct .pixels15 h1{
-        font-size: 13px;
+    .pixels15 {
+        font-size: 0.4em;
         font-style: italic;
         max-width: 100%;
         text-align: center;
