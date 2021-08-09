@@ -49,8 +49,8 @@ p {
     text-align: center;
 }
 
-.tituloAct 18pixels{
-    font-size: 18px;
+.tituloAct .pixels15{
+    font-size: 15px;
     font-style: italic;
     max-width: 100%;
     text-align: center;
