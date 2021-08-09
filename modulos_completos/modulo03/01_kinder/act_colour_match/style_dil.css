@@ -56,4 +56,7 @@
         height: auto;
         vertical-align: middle;
     }
+    #lienzo {
+        padding: 0;
+    }
 }
