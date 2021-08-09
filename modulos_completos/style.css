@@ -169,6 +169,9 @@ p {
         height: 75%;
         z-index: 20;
     }
+    .embed-container .colour-match {
+        padding-bottom: 350px;
+    }
     /* Div para envolver el titulo de la actividad */
     .tituloAct {
         font-size: 0.6em;
