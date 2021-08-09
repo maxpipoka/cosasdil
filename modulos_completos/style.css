@@ -144,6 +144,15 @@ p {
 
 /*Responsive para dispositivos moviles*/
 
+
+/* Minimum aspect ratio cels 2340x1080 - 13/6 aspect ratio*/
+
+@media (min-aspect-ratio: 13/6) {
+    .colour-match {
+        padding-bottom: 650px;
+    }
+}
+
 @media (max-width:720px) {
     .embed-container {
         position: relative;
