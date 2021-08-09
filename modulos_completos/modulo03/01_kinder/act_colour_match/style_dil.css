@@ -56,7 +56,19 @@
         height: auto;
         vertical-align: middle;
     }
+    .numIndicador {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .puntos .numIndicador {
+        font-size: 20px;
+        line-height: 25px;
+    }
     #lienzo {
         padding: 0;
+    }
+    .container-canvas #canvas {
+        width: 72 !important;
+        height: 300 !important;
     }
 }
