@@ -36,8 +36,8 @@
     }
     .btn-sound {
         display: block;
-        width: 39px;
-        height: 39px;
+        width: 30px;
+        height: 30px;
     }
     .imgUserPlayer {
         display: none;
@@ -50,7 +50,6 @@
     #resultados .rDatos {
         font-size: 20px;
     }
-
     .btn-image img {
         max-width: 30px;
         height: auto;
