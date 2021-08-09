@@ -38,6 +38,7 @@
         display: block;
         width: 30px;
         height: 30px;
+        border: 2px solid #7cb139;
     }
     .imgUserPlayer {
         display: none;
