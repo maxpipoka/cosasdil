@@ -71,4 +71,10 @@
         width: 72 !important;
         height: 300 !important;
     }
+    .boxIndicador {
+        padding: 1px 0 3px;
+    }
+    #wrapper {
+        top: 77px;
+    }
 }
