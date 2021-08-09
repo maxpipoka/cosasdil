@@ -49,13 +49,6 @@ p {
     text-align: center;
 }
 
-.tituloAct .pixels15{
-    font-size: 15px;
-    font-style: italic;
-    max-width: 100%;
-    text-align: center;
-}
-
 .p_bold {
     font-size: 15px;
     font-weight: bold;
@@ -167,6 +160,13 @@ p {
         text-align: center;
         position: relative;
         padding-top: 40px;
+    }
+
+    .tituloAct .pixels15{
+        font-size: 15px;
+        font-style: italic;
+        max-width: 100%;
+        text-align: center;
     }
 }
 
