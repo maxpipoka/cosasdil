@@ -185,4 +185,11 @@ p {
         position: relative;
         padding-top: 40px;
     }
+
+    .tituloAct .pixels15{
+        font-size: 13px;
+        font-style: italic;
+        max-width: 100%;
+        text-align: center;
+    }
 }
