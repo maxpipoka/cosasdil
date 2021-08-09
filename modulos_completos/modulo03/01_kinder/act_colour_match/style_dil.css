@@ -77,4 +77,7 @@
     #wrapper {
         top: 77px;
     }
+    #headAct {
+        display: none;
+    }
 }
