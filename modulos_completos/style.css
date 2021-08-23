@@ -144,6 +144,15 @@ p {
 
 /*Responsive para dispositivos moviles*/
 
+
+/* Minimum aspect ratio cels 2340x1080 - 13/6 aspect ratio*/
+
+@media (min-height: 2340px) and (min-width: 1080px) {
+    .colour-match {
+        padding-bottom: 1500px;
+    }
+}
+
 @media (max-width:720px) {
     .embed-container {
         position: relative;
@@ -154,19 +163,12 @@ p {
         overflow: hidden;
     }
     .tituloAct {
-        font-size: 0.6em;
+        font-size: 0.5em;
         width: 100%;
         /* height: 25%; */
         text-align: center;
         position: relative;
         padding-top: 40px;
-    }
-
-    .tituloAct .pixels15 h1{
-        font-size: 13px;
-        font-style: italic;
-        max-width: 100%;
-        text-align: center;
     }
 }
 
@@ -175,6 +177,9 @@ p {
         width: 100%;
         height: 75%;
         z-index: 20;
+    }
+    .colour-match {
+        padding-bottom: 350px;
     }
     /* Div para envolver el titulo de la actividad */
     .tituloAct {
@@ -185,9 +190,8 @@ p {
         position: relative;
         padding-top: 40px;
     }
-
-    .tituloAct .pixels15 h1{
-        font-size: 13px;
+    .pixels15 {
+        font-size: 0.35em;
         font-style: italic;
         max-width: 100%;
         text-align: center;

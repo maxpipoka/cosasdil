@@ -36,8 +36,9 @@
     }
     .btn-sound {
         display: block;
-        width: 39px;
-        height: 39px;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #7cb139;
     }
     .imgUserPlayer {
         display: none;
@@ -50,10 +51,33 @@
     #resultados .rDatos {
         font-size: 20px;
     }
-
     .btn-image img {
         max-width: 30px;
         height: auto;
         vertical-align: middle;
+    }
+    .numIndicador {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .puntos .numIndicador {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    #lienzo {
+        padding: 0;
+    }
+    .container-canvas #canvas {
+        width: 72 !important;
+        height: 300 !important;
+    }
+    .boxIndicador {
+        padding: 1px 0 3px;
+    }
+    #wrapper {
+        top: 50px;
+    }
+    #headAct {
+        display: none;
     }
 }
