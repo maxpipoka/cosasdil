@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://maxpipoka.github.io/cosasdil/modulos_completos/style.css" rel="stylesheet" />
+	<link href="https://maxpipoka.github.io/cosasdil/modulos_completos/circles.css" rel="stylesheet" />
+</head>
+<body>
+<div class="area">
+<div class="tituloAct">
+<h1>HOLA!! TE ANIMAS A RESOLVER ESTE JUEGO???</</h1>
+
+<p>
+<audio class="audios" controls="" id="consignaSound" style="width:70px;" width="70"><source src="https://siliconmisiones.gob.ar/dil/app/upload/users/3/396/my_files/kinder_maestro/AUDIOS/modulo%205/consignas/Act%201.2.mp3" type="audio/mp3" />Su navegador no soporta AUDIO.<br />
+Por favor, descargue el fichero: <a href="https://siliconmisiones.gob.ar/dil/app/upload/users/3/396/my_files/kinder_maestro/AUDIOS/modulo%205/consignas/Act%201.2.mp3">audio/mp3</a></audio>
+</p>
+
+<img alt="" class="img-responsive-70" id="consigna" src="https://siliconmisiones.gob.ar/dil/app/upload/users/1/19/my_files/BOTON%20CONSIGNA.png?_t=1621629129" style="z-index:99;" title="Laboratorio de Innovación Digital"/>
+
+<p>&nbsp;</p>
+
+<div class="embed-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://wordwall.net/es/embed/c45fce4b81f84a2ebd0b981cf0b175c7?themeId=43&amp;templateId=2" width="560"></iframe></div>
+
+<ul class="circles">
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+</ul>
+</div>
+<style type="text/css">body{}
+    .audios{
+        display: none
+</style>
+<p>&nbsp;</p>
+<script>
+        $(document).ready(function() {
+            $(".img-responsive").mouseover(function() {
+                audioCall($(this).attr('id'));
+            }).mousedown(function(){
+                audioCall($(this).attr('id'));
+            });
+        });
+        function audioCall(a){
+            var name = a+"Sound";
+            document.getElementById(name).play();
+        }
+    </script>
+<style type="text/css">body{}
+</style>
+</div>
+</body>
+</html>
