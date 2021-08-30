@@ -60,6 +60,10 @@ p {
     font-size: auto;
 }
 
+.audio-invisible{
+    display: none;
+}
+
 
 /*Area de trabajo separada del fondo animado*/
 
